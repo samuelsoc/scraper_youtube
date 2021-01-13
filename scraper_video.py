@@ -32,13 +32,15 @@ countViz =driver.find_element_by_css_selector(".view-count").text
 fecha1 = driver.find_element_by_css_selector("yt-formatted-string.ytd-video-primary-info-renderer:nth-child(2)").text
 likes = driver.find_element_by_css_selector("ytd-toggle-button-renderer.style-scope:nth-child(1) > a:nth-child(1) > yt-formatted-string:nth-child(2)").text
 dislike = driver.find_element_by_css_selector("ytd-toggle-button-renderer.style-scope:nth-child(2) > a:nth-child(1) > yt-formatted-string:nth-child(2)").text
+duracion  =  driver.find_element_by_css_selector(".ytp-time-duration").text
 dt = {'name': cname,
       'vistas':countViz,
       'fecha':fecha1,
       'likes':likes,
-      'dislikes':dislike}
+      'dislikes':dislike,
+      'duracion':duracion}
 
-print("Nombre video:{}, tiene {}, desde {}, {} Me gusta y {} No me gusta".format(cname,countViz,fecha1,likes,dislike))
+print("Nombre video:{}, tiene {}, desde {}, {} Me gusta y {} No me gusta, duracion: {}".format(cname,countViz,fecha1,likes,dislike,duracion))
 time.sleep(3)
 # cerrar driver
 driver.close()
